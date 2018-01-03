@@ -7,8 +7,7 @@ This project is aiming at providing a instant air quality index to the users bas
 It is using [create-react-app](https://github.com/facebookincubator/create-react-app) and [react-hot-loader](https://github.com/gaearon/react-hot-loader) for development.
 
 ## Usage
-Visit -> [https://airnow.herokuapp.com]
-(https://airnow.herokuapp.com)
+Visit -> [https://airnow.herokuapp.com](https://airnow.herokuapp.com)
 
 or
 
