@@ -10,7 +10,7 @@ Visit -> [https://airnow.herokuapp.com]
 
 or
 
-``` javascript
+``` shell
 //install dependencies
 yarn 
 //run app
