@@ -11,11 +11,11 @@ Visit -> [https://airnow.herokuapp.com]
 or
 
 ``` shell
-//install dependencies
+# install dependencies
 yarn 
-//run app
+# run app
 yarn start
-//build app
+# build app
 yarn build
 ```
 
