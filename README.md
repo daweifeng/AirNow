@@ -2,7 +2,7 @@
 An Air Quality App Built With React.JS
 
 ## Introduce
-This project is aiming at providing a instant air quality index to the users based on their geolocation. It is using [create-react-app] (https://github.com/facebookincubator/create-react-app) and [react-hot-loader] (https://github.com/gaearon/react-hot-loader)
+This project is aiming at providing a instant air quality index to the users based on their geolocation. It is using [create-react-app](https://github.com/facebookincubator/create-react-app) and [react-hot-loader](https://github.com/gaearon/react-hot-loader)
 
 ## Usage
 Visit -> [https://airnow.herokuapp.com]
@@ -20,5 +20,4 @@ yarn build
 ```
 
 ## API
-Backend API powered by [The World Air Quality Index (AQI) Project]
-(http://waqi.info/)
+Backend API powered by [The World Air Quality Index (AQI) Project](http://waqi.info/)
