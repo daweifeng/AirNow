@@ -133,7 +133,11 @@ body {
   margin: 20px auto;
   border: solid #ffffff;
   border-radius: 12px;
-  transition: 0.3s;
+  transition: all 0.3s;
+}
+
+.check-button .diabled::hover {
+  cursor: not-allowed;
 }
 
 .check-button:hover{

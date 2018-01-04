@@ -11,8 +11,9 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { location: null };
+    this.state = { location: null, counting:true };
     this.checkNowOnClick = this.checkNowOnClick.bind(this);
+    this.getCountingFinished = this.getCountingFinished.bind(this);
   }
   componentWillMount() {
     if (navigator.geolocation) {
@@ -25,11 +26,16 @@ class App extends Component {
   }
   checkNowOnClick(e) {
     if (navigator.geolocation) {
-      this.setState({ location: null });
+      this.setState({ location: null, counting: true });
       navigator.geolocation.getCurrentPosition((position) => {
         this.setState({ location: position });
         this.props.ge(this.state.location.coords);
       });
+    }
+  }
+  getCountingFinished(flag) {
+    if (flag){
+      this.setState({counting: false});
     }
   }
   render() {
@@ -37,8 +43,11 @@ class App extends Component {
       const location = this.state.location.coords;
       return (
         <div>
-          <DisplayBoard  />
-          <button onClick={this.checkNowOnClick} className="check-button">Check Now</button>
+          <DisplayBoard getCountingFinished={this.getCountingFinished} />
+          {this.state.counting  
+          ? <button onClick={this.checkNowOnClick} className="check-button diable" disabled>Checking</button>
+          : <button onClick={this.checkNowOnClick} className="check-button">Update</button>
+          }
           <div id="bg-healthy"></div>
           <div id="bg-moderate"></div>
           <div id="bg-sensitive"></div>

@@ -17,12 +17,15 @@ class DisplayBoard extends Component {
 
   // Create the animation of counting
   updatePM25(pm25Data) {
-    for (let i = 0; i < pm25Data; i++) {
+    for (let i = 0; i <= pm25Data; i++) {
       setTimeout(
         ((i) => {
           return () => {
             this.setState({ pm25Data: i});
             const pm25 = this.state.pm25Data;
+            if (i == pm25Data) {
+              this.props.getCountingFinished(true);
+            }
             if (pm25 <= 50) {
               document.querySelector(".main-meter").style.color = "#70F1CE";
               document.querySelector('#bg-healthy').style.opacity = '1';
@@ -59,9 +62,16 @@ class DisplayBoard extends Component {
         })(i)
       );
     }
-    return pm25Data;
   }
 
+  componentWillUnmount() {
+    document.querySelector('#bg-healthy').style.opacity = '0';
+    document.querySelector('#bg-moderate').style.opacity = '0';
+    document.querySelector('#bg-sensitive').style.opacity = '0';
+    document.querySelector('#bg-unhealthy').style.opacity = '0';
+    document.querySelector('#bg-danger').style.opacity = '0';
+    document.querySelector('#bg-hazardous').style.opacity = '0';
+  }
   render() {
     // console.log('receive', this.props.airData[0]);
     if (this.props.airData[0]) {
