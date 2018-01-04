@@ -25,27 +25,27 @@ class DisplayBoard extends Component {
             const pm25 = this.state.pm25Data;
             if (pm25 <= 50) {
               document.querySelector(".main-meter").style.color = "#70F1CE";
-              document.querySelector("body").classList.add('bg-healthy');
+              document.querySelector('#bg-healthy').style.opacity = '1';
               this.setState({ codition: 'Healthy' });
             } else if (pm25 <= 100) {
               document.querySelector(".main-meter").style.color = "#EDC77A";
-              document.querySelector("body").classList.add('bg-moderate');
+              document.querySelector('#bg-healthy').style.opacity = '0';
               this.setState({ codition: 'Moderate' });
             } else if (pm25 <= 150) {
               document.querySelector(".main-meter").style.color = "#EFA556";
-              document.querySelector("body").classList.add('bg-sensitive');
+              document.querySelector('#bg-moderate').style.opacity = '0';
               this.setState({ codition: 'Unhealthy for Sensitive Groups' });
             } else if (pm25 <= 200) {
               document.querySelector(".main-meter").style.color = "#FE7148";
-              document.querySelector("body").classList.add('bg-unhealthy');
+              document.querySelector('#bg-sensitive').style.opacity = '0';
               this.setState({ codition: 'Unhealthy' });
             } else if (pm25 < 300) {
               document.querySelector(".main-meter").style.color = "#B093EF";
-              document.querySelector("body").classList.add('bg-danger');
+              document.querySelector('#bg-unhealthy').style.opacity = '0';
               this.setState({ codition: 'Very Unhealthy' });
             } else {
               document.querySelector(".main-meter").style.color = "#000000";
-              document.querySelector("body").classList.add('bg-hazardous');
+              document.querySelector('#bg-danger').style.opacity = '0';
               this.setState({ codition: 'Hazardous' });
             }
           };

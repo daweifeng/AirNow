@@ -7,32 +7,79 @@ body {
   margin: 0px;
   min-height: 100vh;
   padding-bottom: 20px;
+  position: relative;
 }
 
 
-.bg-healthy {
+#bg-healthy {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  opacity: 0;
   background: linear-gradient(245deg, #6BEFAC, #6FF0E9);
-  transition: background 2s;
-  
+  transition: opacity 0.5s;
 }
 
-.bg-moderate {
+
+#bg-moderate {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  top: 0;
+  left: 0;
   background: linear-gradient(245deg, #F2CC7F, #EC81B1);
+  transition: opacity 0.5s;
 }
 
-.bg-sensitive {
+
+
+#bg-sensitive {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -3;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s;
   background: linear-gradient(245deg, #F9E48F, #FC724F);
 }
 
-.bg-unhealthy {
+
+
+#bg-unhealthy {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -4;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s;
   background: linear-gradient(245deg, #FD9F4B, #B06155);
 }
 
-.bg-danger {
+#bg-danger {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -5;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s;
   background: linear-gradient(245deg, #B093EF, #2E2F66);
 }
 
-.bg-hazardous {
+#bg-hazardous {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -6;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s;
   background: linear-gradient(245deg, #7E0023, #000000);
 }
 

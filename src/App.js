@@ -40,6 +40,12 @@ class App extends Component {
         <div>
           <DisplayBoard location={location} />
           <button onClick={this.checkNowOnClick} className="check-button">Check Now</button>
+          <div id="bg-healthy"></div>
+          <div id="bg-moderate"></div>
+          <div id="bg-sensitive"></div>
+          <div id="bg-unhealthy"></div>
+          <div id="bg-danger"></div>
+          <div id="bg-hazardous"></div>
         </div>
       );
     }
