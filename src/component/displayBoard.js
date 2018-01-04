@@ -30,22 +30,27 @@ class DisplayBoard extends Component {
             } else if (pm25 <= 100) {
               document.querySelector(".main-meter").style.color = "#EDC77A";
               document.querySelector('#bg-healthy').style.opacity = '0';
+              document.querySelector('#bg-moderate').style.opacity = '1';
               this.setState({ codition: 'Moderate' });
             } else if (pm25 <= 150) {
               document.querySelector(".main-meter").style.color = "#EFA556";
               document.querySelector('#bg-moderate').style.opacity = '0';
+              document.querySelector('#bg-sensitive').style.opacity = '1';
               this.setState({ codition: 'Unhealthy for Sensitive Groups' });
             } else if (pm25 <= 200) {
               document.querySelector(".main-meter").style.color = "#FE7148";
               document.querySelector('#bg-sensitive').style.opacity = '0';
+              document.querySelector('#bg-unhealthy').style.opacity = '1';
               this.setState({ codition: 'Unhealthy' });
             } else if (pm25 < 300) {
               document.querySelector(".main-meter").style.color = "#B093EF";
               document.querySelector('#bg-unhealthy').style.opacity = '0';
+              document.querySelector('#bg-danger').style.opacity = '1';
               this.setState({ codition: 'Very Unhealthy' });
             } else {
               document.querySelector(".main-meter").style.color = "#000000";
               document.querySelector('#bg-danger').style.opacity = '0';
+              document.querySelector('#bg-hazardous').style.opacity = '1';
               this.setState({ codition: 'Hazardous' });
             }
           };

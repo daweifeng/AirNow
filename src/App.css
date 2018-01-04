@@ -31,6 +31,7 @@ body {
   z-index: -2;
   top: 0;
   left: 0;
+  opacity: 0;
   background: linear-gradient(245deg, #F2CC7F, #EC81B1);
   transition: opacity 0.5s;
 }
@@ -44,6 +45,7 @@ body {
   z-index: -3;
   top: 0;
   left: 0;
+  opacity: 0;
   transition: opacity 0.5s;
   background: linear-gradient(245deg, #F9E48F, #FC724F);
 }
@@ -57,6 +59,7 @@ body {
   z-index: -4;
   top: 0;
   left: 0;
+  opacity: 0;
   transition: opacity 0.5s;
   background: linear-gradient(245deg, #FD9F4B, #B06155);
 }
@@ -68,6 +71,7 @@ body {
   z-index: -5;
   top: 0;
   left: 0;
+  opacity: 0;
   transition: opacity 0.5s;
   background: linear-gradient(245deg, #B093EF, #2E2F66);
 }
@@ -79,6 +83,7 @@ body {
   z-index: -6;
   top: 0;
   left: 0;
+  opacity: 0;
   transition: opacity 0.5s;
   background: linear-gradient(245deg, #7E0023, #000000);
 }

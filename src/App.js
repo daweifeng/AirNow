@@ -26,7 +26,6 @@ class App extends Component {
   checkNowOnClick(e) {
     if (navigator.geolocation) {
       this.setState({ location: null });
-      document.querySelector("body").className = '';
       navigator.geolocation.getCurrentPosition((position) => {
         this.setState({ location: position });
         this.props.ge(this.state.location.coords);
@@ -38,7 +37,7 @@ class App extends Component {
       const location = this.state.location.coords;
       return (
         <div>
-          <DisplayBoard location={location} />
+          <DisplayBoard  />
           <button onClick={this.checkNowOnClick} className="check-button">Check Now</button>
           <div id="bg-healthy"></div>
           <div id="bg-moderate"></div>
