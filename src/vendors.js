@@ -1,1 +1,1 @@
-module.exports = ['react', 'react-dom', 'react-redux', 'redux', 'redux-promise'];
+module.exports = ['react', 'react-dom', 'react-redux', 'redux', 'redux-promise', 'axios'];

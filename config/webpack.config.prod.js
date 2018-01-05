@@ -336,7 +336,9 @@ module.exports = {
     // You can remove this if you don't use Moment.js:
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     // Vendor spliting
-    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */ 'vendors')
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['vendors', 'manifast']
+    })
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
