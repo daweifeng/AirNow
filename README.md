@@ -1,4 +1,4 @@
-# AirNow - Real-Time Air Quality Index App
+# AirNow - Real-Time Air Quality Index Web App
 An Air Quality App Built With React.JS
 
 ## Introduce
