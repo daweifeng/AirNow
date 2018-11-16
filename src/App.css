@@ -126,6 +126,7 @@ body {
 .check-button {
   background-color: rgba(255, 255, 255, 0); /* Green */
   color: #ffffff;
+  width: 150px;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -137,7 +138,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: 200px 0 0 -60px;
+  margin: 200px 0 0 -80px;
 }
 
 .check-button .diabled::hover {
@@ -184,11 +185,14 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -210px 0 0 -150px;
+  margin: -250px 0 0 -150px;
 }
 
 @media (max-width: 500px) {
   .city {
     font-size: 2rem;
+  }
+  .check-button {
+    margin: 180px 0 0 -80px;
   }
 }
