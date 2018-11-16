@@ -17,6 +17,16 @@ class DisplayBoard extends Component {
 
   // Create the animation of counting
   updatePM25(pm25Data) {
+    let speed;
+    if (pm25Data < 100) {
+      speed = 60;
+    } else if (pm25Data < 200) {
+      speed = 40;
+    } else if (pm25Data < 300) {
+      speed = 38;
+    } else {
+      speed = 35;
+    }
     for (let i = 0; i <= pm25Data; i++) {
       setTimeout(
         ((i) => {
@@ -58,7 +68,7 @@ class DisplayBoard extends Component {
             }
           };
         })(i), ((i) => {
-          return i*60
+          return i*speed
         })(i)
       );
     }
@@ -73,7 +83,6 @@ class DisplayBoard extends Component {
     document.querySelector('#bg-hazardous').style.opacity = '0';
   }
   render() {
-    console.log('receive', this.props.airData[0]);
     if (this.props.airData[0]) {
       return (
         <div>
