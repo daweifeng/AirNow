@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Loader from './loader';
 import { connect } from 'react-redux';
 
 class DisplayBoard extends Component {
@@ -100,7 +101,13 @@ class DisplayBoard extends Component {
         </div>
       );
     }
-    return (<h2 className="loading">Loading data...</h2>);
+    return (
+      <div className="vertical-center"> 
+        <div className="loader-container">
+          <Loader />
+        </div>
+      </div>
+    );
   }
 }
 
