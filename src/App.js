@@ -24,11 +24,11 @@ class App extends Component {
     }
     // console.log('nothing');
   }
-  componentDidMount() {
-    let height = window.outerHeight.toString();
+  // componentDidMount() {
+  //   let height = window.outerHeight.toString();
     
-    document.querySelector("body").style.height = height+"px"
-  }
+  //   document.querySelector("body").style.height = height+"px"
+  // }
   checkNowOnClick(e) {
     if (navigator.geolocation) {
       this.setState({ location: null, counting: true });
