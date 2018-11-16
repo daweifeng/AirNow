@@ -4,6 +4,8 @@ import {AppContainer} from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware} from 'redux';
 import ReduxPromise from 'redux-promise';
+import ReactGA from 'react-ga';
+
 
 import './index.css';
 import App from './App';
@@ -13,6 +15,8 @@ import { watch } from 'fs';
 
 const createStoreWithMiddleWare = applyMiddleware(ReduxPromise)(createStore);
 const rootEl = document.getElementById('root');
+ReactGA.initialize('UA-128591856-2');
+ReactGA.pageview(window.location.pathname + window.location.search);
 ReactDOM.render(
   <AppContainer>
     <Provider store={createStoreWithMiddleWare(airApp)}>
