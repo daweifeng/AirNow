@@ -41,7 +41,7 @@ class App extends Component {
   render() {
     if (this.state.location) {
       const location = this.state.location.coords;
-      console.log(location)
+      // console.log(location)
       return (
         <div>
           <DisplayBoard getCountingFinished={this.getCountingFinished} />
