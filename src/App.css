@@ -193,7 +193,10 @@ body {
     font-size: 2rem;
   }
   .check-button {
-    margin: 180px 0 0 -75px;
+    margin: 175px 0 0 -75px;
+  }
+  .center-block {
+    margin: -225px 0 0 -150px;
   }
 }
 
