@@ -73,7 +73,7 @@ class DisplayBoard extends Component {
     document.querySelector('#bg-hazardous').style.opacity = '0';
   }
   render() {
-    // console.log('receive', this.props.airData[0]);
+    console.log('receive', this.props.airData[0]);
     if (this.props.airData[0]) {
       return (
         <div>
