@@ -196,3 +196,52 @@ body {
     margin: 180px 0 0 -75px;
   }
 }
+
+
+
+/* Loader */
+
+.loader-container {
+  margin: 0 auto;
+  margin-top: 100px;
+  width: 200px;
+  height: 200px;
+}
+
+.loader {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+  animation: spin 1.1s infinite linear;
+}
+
+.loader .particle {
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+  border-radius: 50%;
+  display: inline-block;
+  
+}
+
+
+.green {
+  background: #6BEFAC;
+}
+
+.red {
+  background: #FC724F;
+}
+
+.orange {
+  background: #F9E48F;
+}
+
+.purple {
+  background: #B093EF;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg)}
+  to { transform: rotate(360deg)}
+}
