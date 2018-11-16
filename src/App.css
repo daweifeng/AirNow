@@ -138,7 +138,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: 200px 0 0 -80px;
+  margin: 200px 0 0 -75px;
 }
 
 .check-button .diabled::hover {
@@ -193,6 +193,6 @@ body {
     font-size: 2rem;
   }
   .check-button {
-    margin: 180px 0 0 -80px;
+    margin: 180px 0 0 -75px;
   }
 }
