@@ -80,11 +80,13 @@ class DisplayBoard extends Component {
           <div>
             <div className="airnow">AirNow</div>
           </div>
+          <div className="center-block">
           <h1 className="city">{this.props.airData[0].data.city.name}</h1>
           <div className="main-meter animated bounceIn">
             <h3 className="title">PM2.5</h3>
             <div className="pm25"> {this.state.pm25Data} </div>
             <h3 className="condition">{this.state.codition}</h3>
+          </div>
           </div>
         </div>
       );

@@ -131,10 +131,13 @@ body {
   text-decoration: none;
   display: block;
   font-size: 16px;
-  margin: 20px auto;
   border: solid #ffffff;
-  border-radius: 12px;
+  border-radius: 2rem;
   transition: all 0.3s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 180px 0 0 -60px;
 }
 
 .check-button .diabled::hover {
@@ -143,15 +146,15 @@ body {
 
 .check-button:hover{
   cursor: pointer;
-  transform: scale(0.9,0.9)
+  transform: scale(0.9,0.9);
 }
 
 .main-meter {
   text-align: center;
   width: 300px;
   height: 300px;
-  margin: 10px auto;
-  margin-top: 50px;
+  margin: 0 auto;
+  margin-top: 20px;
   border-radius: 50%;
   background-color: rgba(255,255,255,0.8);
 }
@@ -170,11 +173,18 @@ body {
 
 .city {
   text-align: center;
-  width: 50%;
+  width: 300px;
   margin: auto;
   font-size: 2.5rem;
   color: #ffffff;
   font-weight: 200;
+}
+
+.center-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -210px 0 0 -150px;
 }
 
 @media (max-width: 500px) {
