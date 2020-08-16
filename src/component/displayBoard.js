@@ -34,7 +34,7 @@ class DisplayBoard extends Component {
           return () => {
             this.setState({ pm25Data: i});
             const pm25 = this.state.pm25Data;
-            if (i == pm25Data) {
+            if (i === pm25Data) {
               this.props.getCountingFinished(true);
             }
             if (pm25 <= 50) {

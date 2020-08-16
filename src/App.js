@@ -5,7 +5,6 @@ import { bindActionCreators } from 'redux';
 import DisplayBoard from './component/displayBoard';
 import getNewAirData from './actions/index';
 import Loader from './component/loader';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -46,7 +45,7 @@ class App extends Component {
   }
   render() {
       if (this.state.location) {
-        const location = this.state.location.coords;
+        // const location = this.state.location.coords;
         // console.log(location)
         return (
           <div>
