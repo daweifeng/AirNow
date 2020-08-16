@@ -196,6 +196,10 @@ body {
   
 }
 
+.text-center {
+  text-align: center;
+}
+
 
 .green {
   background: #6BEFAC;

@@ -62,6 +62,12 @@ class App extends Component {
       <div className="vertical-center"> 
         <div className="loader-container">
           <Loader />
+          <p className="text-center">
+            The app will fetch the air quality index based on your location. 
+          </p>
+          <p className="text-center">
+            <strong>Make sure your Location Service is turned on.</strong>
+          </p>
       </div>
       </div>
     );
