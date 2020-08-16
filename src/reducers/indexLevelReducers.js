@@ -1,9 +1,9 @@
 import { SET_INDEX_LEVEL, KEEP_INDEX_LEVEL } from "../actions"
 
 const airDataReducer = (state = {
-  condition: "Healthy",
+  condition: "",
   color: "#70F1CE",
-  background: "bg-healthy"
+  background: "bg-white"
 
 }, action) => {
   switch (action.type) {
