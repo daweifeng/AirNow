@@ -18,6 +18,15 @@ export const getNewAirData =  (location) => {
 
 export const setIndexLevel = (indexData) => {
   switch (indexData) {
+    case 1:
+      return {
+        type: SET_INDEX_LEVEL,
+        payload: {
+          condition: "Healthy",
+          background: "bg-healthy",
+          color: "#70F1CE"
+        }
+      };
     case 51:
       return {
         type: SET_INDEX_LEVEL,
