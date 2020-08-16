@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import DisplayBoard from './component/displayBoard';
-import getNewAirData from './actions/index';
+import { getNewAirData } from './actions/index';
 import Loader from './component/loader';
 import './App.css';
 
@@ -54,12 +54,7 @@ class App extends Component {
             ? <button onClick={this.checkNowOnClick} className="check-button diable" disabled>Checking</button>
             : <button onClick={this.checkNowOnClick} className="check-button">Update</button>
             }
-            <div id="bg-healthy"></div>
-            <div id="bg-moderate"></div>
-            <div id="bg-sensitive"></div>
-            <div id="bg-unhealthy"></div>
-            <div id="bg-danger"></div>
-            <div id="bg-hazardous"></div>
+            <div className={`global-bg ${this.props.background}`}></div>
           </div>
         );
       }
@@ -75,4 +70,10 @@ class App extends Component {
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({ ge: getNewAirData }, dispatch);
 
-export default connect(null, mapDispatchToProps)(App);
+const mapStateToProps = (state) => {
+  return {
+    background: state.indexLevel.background
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

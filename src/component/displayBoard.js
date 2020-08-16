@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from "redux"
 import Loader from './loader';
 import { connect } from 'react-redux';
+import { setIndexLevel } from "../actions"
 
 class DisplayBoard extends Component {
   constructor(props) {
     super();
 
-    this.state = { pm25Data: null, codition: null };
+    this.state = { pm25Data: null };
     this.updatePM25 = this.updatePM25.bind(this);
   }
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.airData[0]) {
-      const pm25 = nextProps.airData[0].data.iaqi.pm25.v;
+  componentDidUpdate(prevProps) {
+    if (prevProps.airData[0] !== this.props.airData[0]) {
+      const pm25 = this.props.airData[0].data.iaqi.pm25.v;
       this.updatePM25(pm25);
     }
   }
@@ -37,36 +39,7 @@ class DisplayBoard extends Component {
             if (i === pm25Data) {
               this.props.getCountingFinished(true);
             }
-            if (pm25 <= 50) {
-              document.querySelector(".main-meter").style.color = "#70F1CE";
-              document.querySelector('#bg-healthy').style.opacity = '1';
-              this.setState({ codition: 'Healthy' });
-            } else if (pm25 <= 100) {
-              document.querySelector(".main-meter").style.color = "#EDC77A";
-              document.querySelector('#bg-healthy').style.opacity = '0';
-              document.querySelector('#bg-moderate').style.opacity = '1';
-              this.setState({ codition: 'Moderate' });
-            } else if (pm25 <= 150) {
-              document.querySelector(".main-meter").style.color = "#EFA556";
-              document.querySelector('#bg-moderate').style.opacity = '0';
-              document.querySelector('#bg-sensitive').style.opacity = '1';
-              this.setState({ codition: 'Unhealthy for Sensitive Groups' });
-            } else if (pm25 <= 200) {
-              document.querySelector(".main-meter").style.color = "#FE7148";
-              document.querySelector('#bg-sensitive').style.opacity = '0';
-              document.querySelector('#bg-unhealthy').style.opacity = '1';
-              this.setState({ codition: 'Unhealthy' });
-            } else if (pm25 < 300) {
-              document.querySelector(".main-meter").style.color = "#B093EF";
-              document.querySelector('#bg-unhealthy').style.opacity = '0';
-              document.querySelector('#bg-danger').style.opacity = '1';
-              this.setState({ codition: 'Very Unhealthy' });
-            } else {
-              document.querySelector(".main-meter").style.color = "#000000";
-              document.querySelector('#bg-danger').style.opacity = '0';
-              document.querySelector('#bg-hazardous').style.opacity = '1';
-              this.setState({ codition: 'Hazardous' });
-            }
+            this.props.setIndexLevel(i);
           };
         })(i), ((i) => {
           return i*speed
@@ -75,14 +48,6 @@ class DisplayBoard extends Component {
     }
   }
 
-  componentWillUnmount() {
-    document.querySelector('#bg-healthy').style.opacity = '0';
-    document.querySelector('#bg-moderate').style.opacity = '0';
-    document.querySelector('#bg-sensitive').style.opacity = '0';
-    document.querySelector('#bg-unhealthy').style.opacity = '0';
-    document.querySelector('#bg-danger').style.opacity = '0';
-    document.querySelector('#bg-hazardous').style.opacity = '0';
-  }
   render() {
     if (this.props.airData[0]) {
       return (
@@ -92,10 +57,10 @@ class DisplayBoard extends Component {
           </div>
           <div className="center-block">
           <h1 className="city">{this.props.airData[0].data.city.name}</h1>
-          <div className="main-meter animated bounceIn">
+          <div className="main-meter animated bounceIn" style={{color: `${this.props.color}`}}>
             <h3 className="title">PM2.5</h3>
             <div className="pm25"> {this.state.pm25Data} </div>
-            <h3 className="condition">{this.state.codition}</h3>
+            <h3 className="condition">{this.props.condition}</h3>
           </div>
           </div>
         </div>
@@ -112,7 +77,13 @@ class DisplayBoard extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { airData: state.airData };
+  return { 
+    airData: state.airData,
+    color: state.indexLevel.color,
+    condition: state.indexLevel.condition
+  };
 };
 
-export default connect(mapStateToProps)(DisplayBoard);
+const mapDispatchToProps = (dispatch) => bindActionCreators({ setIndexLevel }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(DisplayBoard);
